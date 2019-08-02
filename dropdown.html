@@ -1,0 +1,41 @@
+<html>
+    <head>
+<style>
+/* .container:hover div{
+    display: block;
+} */
+ul li:hover {
+    color: red;
+}
+</style>
+    </head>
+    <body>
+        <div style="height: 20px; width:150px; border: 1px solid black; position: relative;" id="container" onclick="fun()">
+          
+        </div>
+          <!-- start:hover -->
+          <div class="" style="display:none; position: absolute;    top: 4px;
+          left: -41px;" id = "child">
+              <ul style="list-style-type: none;" onclick="hidefun(event)">
+                  <li style="height: 20px; width:150px; border: 1px solid black;" value="self">Self</li>
+                  <li style="height: 20px; width:150px; border: 1px solid black;" value="bro">bro</li>
+                  <li style="height: 20px; width:150px; border: 1px solid black;" value="hkbcd">kjfvj</li>
+                  <li style="height: 20px; width:150px; border: 1px solid black;" value="ooo">oooo</li>
+                  <li style="height: 20px; width:150px; border: 1px solid black;" value="ppp">pppp</li>
+              </ul>
+          </div>
+          <!-- end: hover -->
+        <script>
+        function fun(){
+            document.getElementById('child').style.display = 'block';
+        }
+        function hidefun(e){
+            console.log(document.getElementById('child').style.display);
+            document.getElementById('child').style.display = 'none';
+            console.log(document.getElementById('child').style.display);
+            document.getElementById('container').innerHTML = e.target.innerHTML;
+            e.stopPropagation();
+        }
+        </script>
+    </body>
+</html>
